@@ -58,8 +58,7 @@
 			<div class="row" style="margin-left: 0px; margin-top: 30px;">
 				<form action="/post/${post.id}" method="post">
 					<input type="hidden" name="_method" value="delete" style="">
-					<input type="submit" value="Delete"
-						style="outline: none; border: 0px; box-sizing: none; color: red; background-color: black; border-radius: 10px;">
+					<input class= "btn-danger" type="submit" value="Delete">
 				</form>
 			</div>
 		</div>

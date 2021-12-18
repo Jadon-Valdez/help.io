@@ -47,6 +47,9 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Post> posts;
 	
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	private List<Comment> comments;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name = "users_interested",
@@ -119,6 +122,16 @@ public class User {
 
 	public void setPost(List<Post> post) {
 		this.post = post;
+	}
+
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 
 
