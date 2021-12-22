@@ -35,7 +35,7 @@
 			</div>
 		</nav>
 		<div class="container" class="container"
-			style="background-color: #ff5200; margin-top: 100px; padding: 50px; border-radius: 10px;">
+			style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px;">
 			<h1 style="color: white;">Edit Your Post</h1>
 			<div class="container"
 				style="background-color: white; margin-top: 25px; padding: 30px; border-radius: 10px;">
@@ -51,6 +51,11 @@
 						<label>Where? :</label>
 						<form:input path="area" class="form-control" />
 						<form:errors path="area" class="text-danger" />
+					</div>
+					<div class="form-group">
+						<label>Photo URL (optional) :</label>
+						<form:input path="photo" class="form-control" />
+						<form:errors path="photo" class="text-danger" />
 					</div>
 					<input type="submit" value="Submit" />
 				</form:form>

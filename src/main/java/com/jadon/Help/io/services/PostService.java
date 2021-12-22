@@ -19,7 +19,10 @@ public class PostService {
         return postRepo.save(p);
     }
 //	READ ALL
-	public List<Post> allPosts() {
+	public List<Post> allPosts(String keyword) {
+		if(keyword != null) {
+			return postRepo.findByKeyword(keyword);
+		}
         return postRepo.findAll();
     }
 //	READ ONE
@@ -32,14 +35,13 @@ public class PostService {
         }
 	}
 	
-//	UPDATE entire book
 	public Post updatePost(Post p) {
 		return postRepo.save(p);
 	}
 	
 	
-//	DELETE
 	public void deletePost(Long id) {
 		postRepo.deleteById(id);
 	}
+	
 }

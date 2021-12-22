@@ -13,9 +13,9 @@
 <meta charset="UTF-8">
 <title>Help Someone</title>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a href="/home" class="navbar-brand" style="color: #ff5200;">Help.io</a>
+<body style="background-image: url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/ripples.png)">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00a6ff;">
+		<a href="/home" class="navbar-brand font-weight-bold" style="color: #ff5200;">Help.io</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item"><a href="/new" class="nav-link">Help
@@ -28,12 +28,11 @@
 		</div>
 	</nav>
 	<div class="container"
-		style="background-color: #ff5200; margin-top: 100px; padding: 50px; border-radius: 10px;">
-		<h1 style="color: white;">You are on the way to helping someone!</h1>
+		style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
+		<h1 style="color: #ff5200;">You are on the way to helping someone!</h1>
 		<div class="container"
 			style="background-color: white; margin-top: 25px; padding: 30px; border-radius: 10px;">
-			<form:form action="/new" method="post" modelAttribute="post">
-				<form:errors path="*" />
+			<form:form action="/new" method="post" modelAttribute="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label>Explain how you are trying to help:</label>
 					<form:input path="title" class="form-control" />
@@ -43,6 +42,11 @@
 					<label>Where? :</label>
 					<form:input path="area" class="form-control" />
 					<form:errors path="area" class="text-danger" />
+				</div>
+				<div class="form-group">
+					<label>Photo URL: (optional)</label>
+					<form:input path="photo" class="form-control" />
+					<form:errors path="photo" class="text-danger" />
 				</div>
 				<input type="submit" value="Submit" />
 			</form:form>

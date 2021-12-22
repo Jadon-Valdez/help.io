@@ -13,11 +13,13 @@
 <meta charset="UTF-8">
 <title>User Profile</title>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-		<a href="/home" class="navbar-brand" style="color: #ff5200;">Help.io</a>
+<body style="background-image: url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/ripples.png)">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #00a6ff;">
+		<a href="/home" class="navbar-brand font-weight-bold" style="color: #ff5200;">Help.io</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a href="/interests/${loggedUser}" class="nav-link">My
+					Interests</a></li>
 				<li class="nav-item"><a href="/post/new" class="nav-link">Help
 						Someone</a></li>
 				<li class="nav-item"><a href="/user/${id}" class="nav-link">My
@@ -28,22 +30,24 @@
 		</div>
 	</nav>
 	<div class="container"
-		style="background-color: #ff5200; margin-top: 100px; padding: 50px; border-radius: 10px;">
+		style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
 		<c:if test="${loggedUser != user.id}">
-			<h1 style="color: white;">${user.userName}'s Posts</h1>
+			<h1 style="color:#ff5200;">${user.userName}'sPosts</h1>
 		</c:if>
 		<c:if test="${loggedUser == user.id}">
-			<h1 style="color: white;">Your Posts</h1>
+			<h1 style="color: #ff5200;">Your Posts</h1>
 		</c:if>
 		<hr>
 		<c:forEach items="${posts}" var="post">
 			<div class="container"
 				style="background-color: white; margin-top: 30px; padding: 30px; border-radius: 10px; width: 990px; box-shadow: 3px 3px 3px 1px gray;">
-				<div class="container" style="margin: 30px 40px 20px 20px;">
+				<div class="container" style="margin: 30px 40px 20px 0px;">
 					<a href="/post/${post.id}"
 						style="color: inherit; text-decoration: inherit;"><c:out
 							value="${post.title}"></c:out></a>
 					<p style="margin-top: 20px;">Location: ${post.area}</p>
+					<img src="${post.photo}" class="rounded mx-auto d-block img-fluid mb-3" />
+					<p>${post.interested_users.size()} interested</p>
 				</div>
 			</div>
 		</c:forEach>

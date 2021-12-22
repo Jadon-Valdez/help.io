@@ -40,6 +40,10 @@ public class Post {
 	@NotEmpty(message = "Area is required!")
 	@Size(min = 3, max = 45, message = "Must be at least 3 characters!")
 	private String area;
+	
+	@Column(columnDefinition="varchar(255)", nullable = true)
+	private String photo;
+	
 
 	//RELATION DECLARATION
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -139,6 +143,15 @@ public class Post {
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
 
 
 }

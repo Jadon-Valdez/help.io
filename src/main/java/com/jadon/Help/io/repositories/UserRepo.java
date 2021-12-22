@@ -11,5 +11,6 @@ import com.jadon.Help.io.models.User;
 public interface UserRepo extends CrudRepository<User, Long> {
 
     Optional<User> findByEmail(String email);
+    
     Iterable<User> findAll();
 }

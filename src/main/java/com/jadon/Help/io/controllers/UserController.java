@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.jadon.Help.io.models.Comment;
 import com.jadon.Help.io.models.LoginUser;
 import com.jadon.Help.io.models.Post;
 import com.jadon.Help.io.models.User;
@@ -40,7 +41,7 @@ public class UserController {
 	public String index(Model model) {
 		model.addAttribute("newUser", new User());
 		model.addAttribute("newLogin", new LoginUser());
-		return "login/index.jsp";
+		return "/login/index.jsp";
 	}
 
 	// CREATE USER
@@ -58,9 +59,9 @@ public class UserController {
 
 	// SUCCESS
 	@GetMapping("/home")
-	public String home(HttpSession s, Model model) {
+	public String home(HttpSession s, Model model, String keyword) {
 //		retrieve what is in session
-		List<Post> posts = postServ.allPosts();
+		List<Post> posts = postServ.allPosts(keyword);
 		Long userID = (Long) s.getAttribute("user_id");
 		User thisUser = userServ.findOne(userID);
 		model.addAttribute("id", thisUser.getId());
@@ -68,7 +69,9 @@ public class UserController {
 		model.addAttribute("thisUser", thisUser);
 		model.addAttribute("name", thisUser.getUserName());
 		model.addAttribute("posts", posts);
-		return "login/main.jsp";
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("commentNew", new Comment());
+		return "/login/main.jsp";
 	}
 
 	// LOGIN USER
@@ -78,7 +81,7 @@ public class UserController {
 		User user = userServ.login(newLogin, result);
 		if (result.hasErrors()) {
 			model.addAttribute("newUser", new User());
-			return "login/index.jsp";
+			return "/login/index.jsp";
 		}
 		session.setAttribute("user_id", user.getId());
 		return "redirect:/home";

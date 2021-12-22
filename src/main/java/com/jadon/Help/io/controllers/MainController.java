@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,12 +18,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jadon.Help.io.models.Comment;
 import com.jadon.Help.io.models.Post;
 import com.jadon.Help.io.models.User;
-import com.jadon.Help.io.models.Comment;
+import com.jadon.Help.io.services.CommentService;
 import com.jadon.Help.io.services.PostService;
 import com.jadon.Help.io.services.UserService;
-import com.jadon.Help.io.services.CommentService;
 
 @Controller
 public class MainController {
@@ -34,19 +35,12 @@ public class MainController {
 	@Autowired
 	private CommentService commentServ;
 
-	@RequestMapping("/home")
-	public String showAll(Model model) {
-		List<Post> posts = postServ.allPosts();
-		model.addAttribute("posts", posts);
-		return "/login/main.jsp";
-	}
-
 	@RequestMapping("/post/new")
-	public String createNew(@ModelAttribute("post") Post post, HttpSession s, Model model) {
+	public String createNew(@ModelAttribute("post") Post post, HttpSession s, Model model, String keyword) {
 		Long userID = (Long) s.getAttribute("user_id");
 		User thisUser = userServ.findOne(userID);
 		model.addAttribute("id", thisUser.getId());
-		model.addAttribute("posts", postServ.allPosts());
+		model.addAttribute("posts", postServ.allPosts(keyword));
 		if (userID == null) {
 			return "redirect:/";
 		} else {
@@ -55,7 +49,7 @@ public class MainController {
 	}
 
 	@PostMapping(value = "/new")
-	public String createPost(@Valid @ModelAttribute("post") Post post, BindingResult res, HttpSession s, Model model) {
+	public String createPost(@Valid @ModelAttribute("post") Post post, BindingResult res, HttpSession s, Model model){
 		Long userID = (Long) s.getAttribute("user_id");
 		User thisUser = userServ.findOne(userID);
 		if (res.hasErrors()) {

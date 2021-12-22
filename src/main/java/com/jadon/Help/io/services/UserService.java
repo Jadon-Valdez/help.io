@@ -61,7 +61,7 @@ public class UserService {
     	}
     }
     
-    public Iterable<User> allUsers() {
+    public Iterable<User> allUsers(String keyword) {
     	return userRepo.findAll();
     }
 }
