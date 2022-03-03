@@ -16,7 +16,7 @@
 <body
 	style="background-image: url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/ripples.png)">
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
-		style="background-color: #00a6ff;">
+		style="background-color: #eff0eb;">
 		<a href="/home" class="navbar-brand font-weight-bold"
 			style="color: #ff5200;">Help.io</a>
 		<div class="collapse navbar-collapse">
@@ -47,7 +47,7 @@
 		</div>
 	</nav>
 	<div class="container"
-		style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px;">
+		style="background-color: #eff0eb; margin-top: 100px; padding: 50px; border-radius: 10px;">
 		<h1 style="color: #ff5200;">Hello, ${name}</h1>
 		<hr>
 		<c:forEach items="${posts}" var="post">

@@ -21,7 +21,7 @@
 		<a href="/home">Go home</a>
 	</c:if>
 	<c:if test="${verifPost == loggedUser}">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light" style=" background-color: #eff0eb;">
 			<a href="/home" class="navbar-brand" style="color: #ff5200;">Help.io</a>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
@@ -35,8 +35,8 @@
 			</div>
 		</nav>
 		<div class="container" class="container"
-			style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px;">
-			<h1 style="color: white;">Edit Your Post</h1>
+			style="background-color: #eff0eb; margin-top: 100px; padding: 50px; border-radius: 10px;">
+			<h1 style="color: #ff5200;">Edit Your Post</h1>
 			<div class="container"
 				style="background-color: white; margin-top: 25px; padding: 30px; border-radius: 10px;">
 				<form:form action="/post/${post.id}" method="post"

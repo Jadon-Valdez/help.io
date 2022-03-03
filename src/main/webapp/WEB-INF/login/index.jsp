@@ -15,10 +15,10 @@
 <body style=" background-color:  #eff0eb;">
 	<nav class="navbar navbar-light" style="background-color: #eff0eb;">
 		<a href="/" class="navbar-brand" style="color: #ff5200;">Help.io</a>
-		<ul class="navbar-nav ml-auto">
+<!-- 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item ml-auto"><a href="/home"
 				style="color: #ff5200">Continue as guest</a></li>
-		</ul>
+		</ul> -->
 	</nav>
 	<div
 		style="background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-9.jpg); lightgray; padding: 100px;">

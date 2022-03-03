@@ -14,7 +14,7 @@
 <title>User Profile</title>
 </head>
 <body style="background-image: url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/ripples.png)">
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #00a6ff;">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #eff0eb;">
 		<a href="/home" class="navbar-brand font-weight-bold" style="color: #ff5200;">Help.io</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
@@ -30,7 +30,7 @@
 		</div>
 	</nav>
 	<div class="container"
-		style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
+		style="background-color: #eff0eb; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
 		<c:if test="${loggedUser != user.id}">
 			<h1 style="color:#ff5200;">${user.userName}'sPosts</h1>
 		</c:if>

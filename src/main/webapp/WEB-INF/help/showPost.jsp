@@ -14,7 +14,7 @@
 <title>Post</title>
 </head>
 <body style="background-image: url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/ripples.png)">
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #00a6ff;">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #eff0eb;">
 		<a href="/home" class="navbar-brand font-weight-bold" style="color: #ff6a00;">Help.io</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
@@ -30,7 +30,7 @@
 		</div>
 	</nav>
 	<div class="container"
-		style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
+		style="background-color: #eff0eb; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
 		<h1 style="color: #ff5200;">${post.getUser().userName}, is offering
 			help!</h1>
 		<div class="container"
@@ -47,7 +47,6 @@
 		<h2 class="mt-4" style="color: #ff5200;">Comments (${comments.size()}):</h2>
 		<form:form action="/comment/${post.id}" method="post"
 			modelAttribute="commentNew">
-			<form:errors path="*" />
 			<div class="form-group"
 				style="margin-left: 25px; margin-right: 25px;">
 				<label style="color: #ff5200;">Leave a comment:</label>

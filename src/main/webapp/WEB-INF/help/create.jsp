@@ -14,7 +14,7 @@
 <title>Help Someone</title>
 </head>
 <body style="background-image: url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/ripples.png)">
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00a6ff;">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#eff0eb;">
 		<a href="/home" class="navbar-brand font-weight-bold" style="color: #ff5200;">Help.io</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
@@ -28,7 +28,7 @@
 		</div>
 	</nav>
 	<div class="container"
-		style="background-color: #00a6ff; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
+		style="background-color: #eff0eb; margin-top: 100px; padding: 50px; border-radius: 10px; border: 1px solid grey;">
 		<h1 style="color: #ff5200;">You are on the way to helping someone!</h1>
 		<div class="container"
 			style="background-color: white; margin-top: 25px; padding: 30px; border-radius: 10px;">
