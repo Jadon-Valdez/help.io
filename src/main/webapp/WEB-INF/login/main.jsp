@@ -94,7 +94,7 @@
 							<form:input path="body" class="form-control" />
 							<form:errors path="body" class="text-danger" />
 						</div>
-						<input type="submit" value="Comment" style="margin-left: 25px;" />
+						<input class="btn btn-primary" type="submit" value="Comment" style="margin-left: 25px;" />
 					</form:form>
 				</div>
 			</div>

@@ -170,7 +170,7 @@ public class MainController {
 		Post interested = postServ.findPost(post_id);
 		interested.getInterested_users().remove(thisUser);
 		postServ.updatePost(interested);
-		return "redirect:/home";
+		return "/help/interests.jsp";
 	}
 
 }
